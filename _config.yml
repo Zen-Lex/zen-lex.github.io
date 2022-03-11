@@ -1,98 +1,53 @@
-# WhatATheme
+title: Pudhina Fresh # Shown in header on pages with full_logo: true
+short_logo: PF. # Shown in header on all pages by default unless full_logo: true is set
+description: > # The description for your site
+  A minimal yet feature-rich Jekyll theme made for personal websites and blogs.
+url: "https://ritijjain.github.io/pudhina-fresh" # Site base URL
+
+author:
+  name: Ritij Jain
+  github: ritijjain/pudhina-fresh # GitHub username, used for GitHub icon on the top right
+  linkedin: ritijjain # Your LinkedIn profile url name, used for LinkedIn icon on the top right
+  email: example@example.com # Used for email icon on the top right
+  homepage: https://ritijjain.com # This links to your name in post meta
+  twitter: # Twitter username, used for Twitter Card Analytics 
+
+disqus_name: # Setting this will turn on Disqus comments
+g_track_id: # Google Analytics tracking ID (e.g. UA-000000-2), setting this will turn on Google Analytics
+
 markdown: kramdown
 
-# URL of the Site
-url: ''
-# Base URL of the Site (i.e., Name of the Repository in which the Site is hosted)
-baseurl: 
+defaults: # Recommended defaults, you may set your own
+  -
+    scope:
+      path: _posts
+    values:
+      comments: true
+  -
+    scope:
+      path: pages/redirects
+    values:
+      layout: redirect
+      index: false
+      listed: false
+  -
+    scope:
+      path: pages/tags
+    values:
+      layout: tag
+      sitemap:
+        priority: 0.4
 
-# Title of the Site
-title: What A Theme
-# Description of the Site
-description: A customizable Jekyll portfolio theme
-# URL of Image of the Site
-site-image: /WhatATheme/assets/images/meta.jpg
-# Keywords of the Site
-site-keywords: Site, Template, Theme
-# URL for the Image of custom Favicon
-favicon-url: 
-typewrite-text: devlopr is a jekyll framework built for developers. You can edit this in _config.yml file
-
-# URL of the Image of Custom Hero Image (i.e., the image in the background of the very first section of the Homepage)
-heroimage: https://images.pexels.com/photos/220444/pexels-photo-220444.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940
-
-# Social Media and Contact
-# If you don't want to use any icon, you can leave them blank.
-email: thedevslot@gmail.com
-facebook_username: thedevslot
-twitter_username: thedevslot
-instagram_username: thedevslot
-linkedin_username: thedevslot
-github_username:  thedevslot
-youtube_channel_id: UCk_93NXYP-U_AOB5GfWlOow
-reddit_username: /
-behance_username: /
-dribbble_username: /
-spotify_username: /
-
-# Google Analytics
-google-analytics: UA-163806439-1
-
-# Disqus
-disqus-shortname: thedevslot
-
-# Name of the Author
-author-name: TheDevsLot
-# URL for the Image of the Author
-author-image: https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png
-# 60 Words About the Author
-author-about: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget pharetra velit, dapibus bibendum ex. Maecenas vitae laoreet mauris, ac luctus metus. Aliquam luctus velit vel ipsum feugiat, vel venenatis mauris hendrerit. Sed at vulputate sapien, eget vehicula dolor. Aliquam volutpat pulvinar neque sit amet sodales.
-# URL to the Author's Profile (i.e., Github, Twitter, Stackoverflow, etc)
-author-url: https://github.com/thedevslot
-
-# SASS
-sass:
-  sass_dir: _sass
-  style: compressed
-
-# Build settings
-plugins:
-  - jekyll-admin
-  - jekyll-feed
-
-# Permalink
-permalink: "blog/:title"
-
-# Compress
 compress_html:
   clippings: all
+  comments: ["<!-- ", " -->"]
+  endings: all
+  ignore:
+    envs: [local]
+  blanklines: true
+  profile: false
+  startings: [html, head, body]
 
-# Defaults
-defaults:
-  -
-    scope:
-      type: 'posts'
-    values:
-      layout: post
-      post-image: ""
-      description: ""
-      tags:
-        - ""
-  -
-    scope:
-      type: 'pages'
-    values:
-      layout: page
-
-# Exclude
-exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
-  - Gemfile
-  - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
+rss: false # RSS feed icon on or off
+dark_mode: true # Dark mode icon
+project_card_style: modal # Choose from masonry, modal, and flat
