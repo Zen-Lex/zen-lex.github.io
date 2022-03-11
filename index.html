@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Test Insert Code</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@450&display=swap" rel="stylesheet">
+	<link href="prism.css" rel="stylesheet" />
+</head>
+
+<body>
+	
+	<section class="exercice">
+		<h3>Exercice 4 : nombre de clics</h3>
+		<p class="enonce">La page HTML initiale doit contenir un paragraphe contenant le chiffre 0 : &lt;p>0&lt;/p>.<br>
+		Écrire une fonction JS qui incrémente ce chiffre de 1 à chaque fois que l'on clique sur le paragraphe.<br>
+		Note : Une actualisation de la page remet bien entendu le compteur à 0.</p>
+
+		<h4>Code:</h4>
+		<pre class="language-javascript"><code>function Click() {
+	let nbClick = 0;
+	let p = document.createElement("p");
+		
+	document.body.section.appendChild(p).append(nbClick);
+	p.addEventListener("click", function(){
+		nbClick++;
+		p.innerText = nbClick;
+	});
+}</code></pre>
+	
+	<h4>Résultat:</h4>
+	<p class="resultat"></p>
+	</section>
+	
+	<script src="click.js"></script>
+	<script src="prism.js"></script>
+</body>
+
+</html>
