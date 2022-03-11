@@ -3,11 +3,11 @@ layout: page
 full_logo: true
 title: 
 subtitle: 
-description: A minimal yet feature-rich Jekyll theme made for personal websites and blogs.
+description: Welcome to my website. Find more about me and what I do.
 sitemap:
   priority: 1.0
 ---
-<p class="describe-text">A minimal yet feature-rich Jekyll theme made for personal websites and blogs.</p>
+<p class="describe-text">Welcome to my website. Find more about me and what I do.</p>
 <br>
 This is the index page, describe yourself in few sentences here. Perhaps talk about what you do for living and what you do in your free time. Maybe even leave an [email@address.com](#) or a link to your [resume](#).
 
