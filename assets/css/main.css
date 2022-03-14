@@ -1,24 +1,17 @@
 @charset "UTF-8";
 
 a {
-  color: #57a;
+  color: #0056b3;
   text-decoration: none;
 }
 
-p,
-ul,
-ol,
-dl {
+p, ul, ol, dl {
   font-size: 100%;
   line-height: 32px;
+  color: #000;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   color: #212529;
   padding-top: 20px;
   font-weight: 500;
@@ -75,7 +68,7 @@ th {
     background-color: #dddddd;
   }
 */
-/* =Header */ /*************************************************************/
+/** Header ************************************************************/
 .header {
   overflow: hidden;
 }
@@ -88,9 +81,14 @@ th {
 a.logo:hover {
   font-size: 300%;
   font-weight: 700;
-  color: #16a085;
+  color: #2cacc1;;
   display: block;
   text-decoration: none;
+}
+
+a:hover {
+  color: #0781db;
+  text-decoration: underline;
 }
 
 .menu {
@@ -126,7 +124,7 @@ a.logo:hover {
   margin-left: 10px;
 }
 
-/* =Titles */ /*************************************************************/
+/** Titles ************************************************************/
 .page-title {
   margin: 30px auto;
   text-align: center;
@@ -143,7 +141,7 @@ a.logo:hover {
   color: #828282;
 }
 
-/* =Post teasers */ /*************************************************************/
+/** Post teasers ***********************************************************/
 .list-posts {
   list-style-type: none;
   padding: 0px;
@@ -178,7 +176,7 @@ a.logo:hover {
   text-align: center;
 }
 
-/* =Post page */ /*************************************************************/
+/** Post page ********************************************************/
 .post-title {
   text-align: left;
 }
@@ -195,7 +193,7 @@ a.logo:hover {
 }
 
 .about {
-  color: #828282;
+  color: #808080;
   text-align: center;
   line-height: 24px;
 }
@@ -214,7 +212,7 @@ a.logo:hover {
   text-align: center;
 }
 
-/* =Page navigation */ /*************************************************************/
+/** Page navigation ************************************************************/
 .PageNavigation {
   display: block;
   width: auto;
@@ -232,7 +230,7 @@ a.logo:hover {
   text-align: right;
 }
 
-/* =Main Page */ /*************************************************************/
+/** Main Page ************************************************************/
 .about-img {
   border-radius: 0.25rem;
   max-width: 125px;
@@ -241,13 +239,13 @@ a.logo:hover {
 }
 
 .describe-text {
-  color: #565656;
+  color: #0056b3;
   font-style: italic;
   font-weight: 700;
   font-size: 130%;
 }
 
-/* =Small screen */ /*************************************************************/
+/** Small screen *************************************************************/
 @media (max-width: 600px) {
   p,
   ul,
@@ -319,7 +317,12 @@ a.logo:hover {
   z-index: 2000;
 }
 
-/* =Glitch effect, Source: http://codepen.io/bulby97/pen/fcvay */ /*************************************************************/
+/** Dark Mode ************************************************************/
+.darkmode--activated .badge {
+  mix-blend-mode: difference;
+}
+
+/** Glitch effect, Source: http://codepen.io/bulby97/pen/fcvay **************************************************************/
 .glitch {
   position: relative;
   animation: glitch 2s steps(100) infinite;
