@@ -23,6 +23,12 @@ img {
   width: 100%;
 }
 
+.inbuilt-img {
+  border-radius: 0.25rem;
+  display: block;
+  width: auto !important;
+}
+
 code {
   font-size: 90%;
   border-radius: 3px;
