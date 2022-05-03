@@ -3,14 +3,14 @@ default_title: JABK
 short_logo: JABK. # Shown in header on all pages by default unless full_logo: true is set
 description: > # The description for your site
   A minimal yet feature-rich Jekyll theme made for personal websites and blogs.
-url: "https://jabk.dev" # Site base URL
+url: "https://zen-lex.github.io" # Site base URL
 
 author:
   name: Julien-Alexandre Bertin-Klein
   github: Zen-Lex/zen-lex.github.io # GitHub username, used for GitHub icon on the top right
   linkedin: jabk # Your LinkedIn profile url name, used for LinkedIn icon on the top right
   email: jbertinke@gmail.com # Used for email icon on the top right
-  homepage: https://jabk.dev # This links to your name in post meta
+  homepage: https://zen-lex.github.io # This links to your name in post meta
 
 markdown: kramdown
 
