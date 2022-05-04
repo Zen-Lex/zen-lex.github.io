@@ -10,4 +10,23 @@ sitemap:
 
 {% assign projects = site.data.projects %}
 
-{% include project/project_loop.html %}
+{% if site.project_card_style == "flat" %}
+  {% for project in projects %}
+    {% include card/project_card_flat.html %}
+  {% endfor %}
+
+{% elsif site.project_card_style == "modal" %}
+  <div class="card-columns">
+    {% for project in projects %}
+      {% include card/project_card_modal.html %}
+    {% endfor %}
+  </div>
+
+{% elsif site.project_card_style == "masonry" %}
+  <div class="card-columns">
+    {% for project in projects %}
+      {% include card/project_card_masonry.html %}
+    {% endfor %}
+  </div>
+
+{% endif %}

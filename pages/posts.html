@@ -9,4 +9,19 @@ sitemap:
 ---
 {% assign posts = site.posts %}
 
-{% include post/post_loop.html %}
+{% for post in posts %}
+  {% unless post.listed == false %}
+    {% if post.pin %}
+      {% include card/post_card.html %}
+    {% endif %}
+  {% endunless %}
+{% endfor %}
+
+{% for post in posts %}
+  {% unless post.listed == false %}
+    {% if post.pin != true %}
+      {% include card/post_card.html %}
+    {% endif %}
+  {% endunless %}
+{% endfor %}
+
