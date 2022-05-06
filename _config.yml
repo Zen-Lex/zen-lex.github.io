@@ -27,7 +27,7 @@ defaults: # Recommended defaults, you may set your own
       comments: false
   -
     scope:
-      path: _data/redirects
+      path: pages/redirects
     values:
       layout: redirect
       index: false

@@ -9,9 +9,11 @@ sitemap:
 ---
 <p class="describe-text">Welcome to my website. Find more about me and what I do.</p>
 <br>
-This is the index page, describe yourself in few sentences here. Perhaps talk about what you do for living and what you do in your free time. Maybe even leave an [email@address.com](#) or a link to your [resume](/assets/files/en/CV_IT_photo_2022.pdf).
+Hello, I'm Julien, french student in Computer Science looking for new adventures.
 
-Pudhina Fresh is free and open-source. Checkout [Pudhina Fresh](https://github.com/ritijjain/pudhina-fresh).
+Since 2020, I'm developping skills on my own or in college, mostly in full-stack software and web developmnent. And I'm thrilled to continue du learn and discover for the years to come.
+
+Feel free to take a look at my [projects](/projects) and my [resume](/assets/files/en/CV_IT_photo_2022.pdf) to learn more about myself or contact me. 😊
 
 <br>
 <br>

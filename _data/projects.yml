@@ -9,59 +9,70 @@
     <a href="/historify" target="_blank" class="btn btn-primary mb-1"><i class="fa-solid fa-arrow-up-right-from-square"></i> &nbsp View Project</a>
   tags: [JS, HTML-CSS] # A list of tags
 
-- name: Kindomino
-  id: kingdomino
-  img_src: 
-  description_less: A minimal yet feature-rich Jekyll theme made for personal websites and blogs.
-  description_more: >
-    <p>This site uses Pudhina Fresh theme.</p>
-  action_buttons: >
-    <a href="https://github.com/ritijjain/pudhina-fresh" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-code-branch"></i> &nbsp Repository</a>
-    <a href="https://ritijjain.com/2020/09/12/pudhina-fresh.html" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-align-right"></i> &nbsp Blog Post</a>
-  tags: [Java]
+# - name: Kindomino
+#   id: kingdomino
+#   img_src: 
+#   description_less: A minimal yet feature-rich Jekyll theme made for personal websites and blogs.
+#   description_more: >
+#     <p>This site uses Pudhina Fresh theme.</p>
+#   action_buttons: >
+#     <a href="https://ritijjain.com/2020/09/12/pudhina-fresh.html" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-align-right"></i> &nbsp Blog Post</a>
+#     <a href="https://github.com/ritijjain/pudhina-fresh" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-code-branch"></i> &nbsp Repository</a>
+#   tags: [Java]
 
-- name: Share your music
-  id: share_your_music
-  img_src: 
-  description_less: Refer to docs to learn how to add your own projects.
-  description_more: >
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  action_buttons: >
-    <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-link"></i> &nbsp View Project</a>
-    <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-align-right"></i> &nbsp Blog Post</a>
-    <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-code-branch"></i> &nbsp Repository</a>
-  tags: [HTML-CSS, JS, React]
+# - name: Share your music
+#   id: share_your_music
+#   img_src: 
+#   description_less: Refer to docs to learn how to add your own projects.
+#   description_more: >
+#     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+#   action_buttons: >
+#     <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-align-right"></i> &nbsp Blog Post</a>
+#     <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-code-branch"></i> &nbsp Repository</a>
+#     <a href="#" target="_blank" class="btn btn-primary mb-1"><i class="fa-solid fa-arrow-up-right-from-square"></i> &nbsp View Project</a>
+#   tags: [HTML-CSS, JS, React]
 
-- name: Dyslexia Game
-  id: dyslexia_game
-  img_src: /assets/img/weatherpie-page.png
-  description_less: Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam.
-  description_more: >
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-  action_buttons: >
-    <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-link"></i> &nbsp View Project</a>
-    <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-align-right"></i> &nbsp Blog Post</a>
-    <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-code-branch"></i> &nbsp Repository</a>
-  tags: [Python]
+# - name: Dyslexia Game
+#   id: dyslexia_game
+#   img_src:
+#   description_less: Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam.
+#   description_more: >
+#     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+#   action_buttons: >
+#     <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-align-right"></i> &nbsp Blog Post</a>
+#     <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-code-branch"></i> &nbsp Repository</a>
+#     <a href="#" target="_blank" class="btn btn-primary mb-1"><i class="fa-solid fa-arrow-up-right-from-square"></i> &nbsp View Project</a>
+#   tags: [Python]
 
-- name: Weather App
-  id: weather_app
-  img_src: /assets/img/connectpie-page.png
-  description_less: A simple project based on Spotify's public API.
-  description_more: >
-    <p>A simple project based on Spotify's public API.</p>
-  action_buttons: >
-    <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-link"></i> &nbsp View Project</a>
-    <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-code-branch"></i> &nbsp Repository</a>
-  tags: [Java, Android]
+# - name: Android App
+#   id: android_app
+#   img_src:
+#   description_less: A simple project based on Spotify's public API.
+#   description_more: >
+#     <p>A simple project based on Spotify's public API.</p>
+#   action_buttons: >
+#     <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-align-right"></i> &nbsp Blog Post</a>
+#     <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-code-branch"></i> &nbsp Repository</a>
+#   tags: [Java, Android]
 
-- name: Dynamic Wallpaper
-  id: dynamic_wallpaper
-  img_src: /assets/img/connectpie-page.png
-  description_less: A simple project based on Spotify's public API.
-  description_more: >
-    <p>A simple project based on Spotify's public API.</p>
-  action_buttons: >
-    <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-link"></i> &nbsp View Project</a>
-    <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-code-branch"></i> &nbsp Repository</a>
-  tags: [JS]
+# - name: Dynamic Wallpaper
+#   id: dynamic_wallpaper
+#   img_src:
+#   description_less: A simple project based on Spotify's public API.
+#   description_more: >
+#     <p>A simple project based on Spotify's public API.</p>
+#   action_buttons: >
+#     <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-align-right"></i> &nbsp Blog Post</a>
+#     <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-code-branch"></i> &nbsp Repository</a>
+#   tags: [JS]
+
+# - name: Ant Colony
+#   id: ant_colony
+#   img_src:
+#   description_less: A simple project based on Spotify's public API.
+#   description_more: >
+#     <p>A simple project based on Spotify's public API.</p>
+#   action_buttons: >
+#     <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-align-right"></i> &nbsp Blog Post</a>
+#     <a href="#" target="_blank" class="btn btn-dark mb-1"><i class="fas fa-code-branch"></i> &nbsp Repository</a>
+#   tags: [JS]
