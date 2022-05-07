@@ -15,8 +15,8 @@ author:
 markdown: kramdown
 
 collection:
-  readme:
-    permalink: /posts/:title
+  projects:
+    permalink: /projects/:title
 
 
 defaults: # Recommended defaults, you may set your own
