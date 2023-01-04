@@ -7,7 +7,7 @@ url: "https://zen-lex.github.io" # Site base URL
 
 author:
   name: Julien-Alexandre Bertin-Klein
-  github: Zen-Lex/zen-lex.github.io # GitHub username, used for GitHub icon on the top right
+  github: Zen-Lex # GitHub username, used for GitHub icon on the top right
   linkedin: jabk # Your LinkedIn profile url name, used for LinkedIn icon on the top right
   email: jbertinke@gmail.com # Used for email icon on the top right
   homepage: https://zen-lex.github.io # This links to your name in post meta
