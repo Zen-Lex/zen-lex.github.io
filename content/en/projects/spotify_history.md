@@ -1,7 +1,48 @@
 ---
 title: "Spotify History"
+summary: "A simple client-side web app to display the last songs listen with your Spotify account"
 date: 2023-03-30T01:47:10+02:00
 draft: true
+
+showToc: true
+TocOpen: false
+UseHugoToc: true
+
+comments: false
+hideSummary: false
+
+hidemeta: false
+searchHidden: true
+ShowReadingTime: true
+ShowBreadCrumbs: true # path of the current page
+ShowWordCount: false
+ShowAuthor: false
+ShowTranslationList: false
+
+ShowCodeCopyButtons: true
+ShowPostNavLinks: true
+ShowRssButtonInSectionTermList: false
+
+searchHidden: true
+disableHLJS: true # to disable highlightjs
+disableShare: true
+disableHLJS: false
+
+disableSpecial1stPost: false
+disableScrollToTop: false
+
+description: "A simple client-side web app to display the last songs listen with your Spotify account"
+
+cover:
+  image: "images/historify-screenshot_wide.png" # image path/url
+  alt: "Screenshot of the website" # alt text
+  caption: "Screenshot of the website" # display caption under cover
+  hidden: false # only hide on current single page
+
+editPost:
+  URL: "https://github.com/Zen-lex/historify"
+  Text: "Source Code" # edit text
+  appendFilePath: false # to append file path to Edit link
 ---
 
 #### A simple client-side web app to display the last songs listen with your Spotify account EN
