@@ -1,4 +1,4 @@
-baseURL: "http://localhost:1313/"
+baseURL: "https://zen-lex.github.io/"
 permalinks:
   projects: "/projects/:filename"
 
