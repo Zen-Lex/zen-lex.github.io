@@ -4,11 +4,21 @@ name: Deploy Hugo site to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
+    paths-ignore:
+      - "images/**"
+      - "LICENSE"
+      - "README.md"
     branches:
-      - main
-
+      - master
+      - exampleSite
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
+    # manual run
+    inputs:
+      hugoVersion:
+        description: "Hugo Version"
+        required: false
+        default: "0.83.0"
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -48,6 +58,10 @@ jobs:
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
+      - name: Get Theme
+        run: git submodule update --init --recursive
+      - name: Update theme to Latest commit
+        run: git submodule update --remote --merge
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Build with Hugo
