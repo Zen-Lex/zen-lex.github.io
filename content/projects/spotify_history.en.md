@@ -17,7 +17,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true # path of the current page
 ShowWordCount: false
 ShowAuthor: false
-ShowTranslationList: true
+ShowTranslationList: false
 
 ShowCodeCopyButtons: true
 ShowPostNavLinks: true

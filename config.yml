@@ -2,7 +2,7 @@ baseURL: "https://zen-lex.github.io/"
 
 title: JABK.
 paginate: 5
-theme: PaperMod
+theme: ["hugo-redirect", "PaperMod"]
 languageCode: fr-fr
 
 enableRobotsTXT: true
