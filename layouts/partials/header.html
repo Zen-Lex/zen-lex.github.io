@@ -95,21 +95,18 @@
                     </svg>
                 </button>
                 {{- end -}}
-
-
                 
                 {{- $alt := .Param "missingTranslationUrl" -}}
-                {{- $path := path.Join (path.Dir .Path) (path.BaseName .Path) -}}
-                {{ $translations_list := slice }}
-                {{ range .Translations }}{{ $translations_list = $translations_list | append .Lang }}{{ end }}
+                {{- $path := strings.TrimPrefix (printf "/%s" .Lang) .RelPermalink -}}
+                {{- $translations := .Translations -}}
                 <ul class="lang-switch">
                     {{- if or $label_text (not site.Params.disableThemeToggle) -}}<li>|</li>{{- end -}}
                     {{- range site.Home.Translations -}}
                     <li>
-                    
-                    {{- if not (slice .Lang | intersect $translations_list) | and $alt -}}
-                        {{- $path = $alt }}
-                    {{ end }}
+
+                    {{- if not (where $translations "Lang" .Lang) -}}
+                        {{- $path = $alt -}}
+                    {{- end -}}
 
                     <a href="{{- path.Join .RelPermalink $path -}}"
                         title="{{ .Language.Params.languageAltTitle | default (.Language.LanguageName | emojify) | default (.Lang | title) }}"

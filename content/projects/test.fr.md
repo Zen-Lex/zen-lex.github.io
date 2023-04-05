@@ -23,6 +23,6 @@ disableHLJS: false
 ShowPostNavLinks: true
 ShowRssButtonInSectionTermList: false
 
-missingTranslationUrl: "projects"
+missingTranslationUrl: ""
 ---
 

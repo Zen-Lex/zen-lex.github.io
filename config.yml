@@ -1,6 +1,4 @@
 baseURL: "https://zen-lex.github.io/"
-permalinks:
-  projects: "/projects/:filename"
 
 title: JABK.
 paginate: 5
@@ -19,7 +17,6 @@ languages:
   fr:
     languageName: "Français :fr:"
     languageAltName: Français
-    contentDir: content/fr
     weight: 1
     menu:
       main:
@@ -35,7 +32,6 @@ languages:
   en:
     languageName: "English :uk:"
     languageAltName: English
-    contentDir: content/en
     weight: 2
     menu:
       main:
@@ -69,8 +65,6 @@ params:
 
   label:
     text: "Home"
-    icon: /apple-touch-icon.png
-    iconHeight: 35
 
   # profile-mode
   profileMode:
@@ -113,6 +107,7 @@ params:
     hiddenInSingle: false # hide on single page
 
   editPost:
+    disabled: true
     URL: "https://github.com/Zen-lex/"
     Text: "Source Code" # edit text
     appendFilePath: false # to append file path to Edit link

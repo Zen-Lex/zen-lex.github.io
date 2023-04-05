@@ -17,7 +17,7 @@ ShowReadingTime: true
 ShowBreadCrumbs: true # path of the current page
 ShowWordCount: false
 ShowAuthor: false
-ShowTranslationList: false
+ShowTranslationList: true
 
 ShowCodeCopyButtons: true
 ShowPostNavLinks: true
@@ -45,14 +45,12 @@ editPost:
   appendFilePath: false # to append file path to Edit link
 ---
 
-#### A simple client-side web app to display the last songs listen with your Spotify account EN
-
-### Two ways to try it
+## Two ways to try it
 
   1. By logging with your own [Spotify account](https://zen-lex.github.io/historify)
   2. Or with [sample data](https://zen-lex.github.io/historify/sample)
 
-### How does it work
+## How does it work
 
 This web application uses the [Spotify Web API](https://developer.spotify.com/documentation/web-api/quick-start/) to access your account and retrieve data.
 
@@ -67,7 +65,7 @@ Because it's a client-side only application, it implements the [*Implicit Grant 
 Once this is done, the application will call different endpoints to get the recently played tracks and if they are contents or not in your Liked Playlist.
 You can interract with each tracks to either, play the song (only if a Spotify client is playing something), like it or add it to queue. You can also click on the track, artist or album name to open the corresponding page in Spotify Web Player.
 
-### Why I've done that
+## Why I've done that
 
 As always, a new project is a perfect occasion for me to develop and learn new skills. In this case, it was simply to learn how to use JavaScript in a client-side environment and to how to work with an API (making request, parsing data, etc.).
 
