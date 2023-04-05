@@ -90,7 +90,7 @@ params:
 
   socialIcons:
     - name: email
-      url: "mailto:jbertink@gmail.com"
+      url: "mailto:contact@jabk.dev"
     - name: github
       url: "https://github.com/Zen-lex"
     - name: linkedin
