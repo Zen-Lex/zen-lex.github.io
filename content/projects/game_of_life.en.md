@@ -85,6 +85,8 @@ The project is a zero‑GUI, keyboard‑driven experience focused on speed, port
 The app is split into small, focused modules. Below is an overview of the architecture and the key responsibilities of each part.
 
 1) Core domain (Board, Rules, Simulation)
+
+
 - Board/grid
   - Represents cells as a 2D array (dense) for cache‑friendly neighbor scans.
   - Two buffers: one for reading the current generation, one for writing the next ("double‑buffering").
@@ -103,16 +105,26 @@ The app is split into small, focused modules. Below is an overview of the archit
     - Swap buffers after a full pass.
   - Exposes controls: run/pause, single step, reset, tick rate.
 
-2) Pattern loading (RLE parser)
-- Understands standard RLE headers:
-  - x=<width>, y=<height>, rule=<ruleString>
-- Data symbols:
-  - o (alive), b (dead), $ (new line), ! (end)
-  - Optional run counts, e.g., 23o = "23 alive cells"
-- Workflow:
-  - Parse header (and use rule override if present).
-  - Decode body into alive coordinates.
-  - Place the pattern onto the board (top‑left or centered).
+### Board Game
+Most of the time in the game of life, the grid representing a game after x iterations will contain more dead than live cell.
+Therefore using a 2D array of bool values is very useful for computing the next state of the game but will result in storing a lot of dead cells, i.e. data without useful information.
+
+To avoid this, the state of the game is stored in a `vector<cell>` (an array of cell). Cell are simple `struct` storing the position x,y of the cell. With this approach only live cells and there position are stored.
+
+
+### Pattern loading (RLE parser)
+The RLE (short for Run Length Encoded) is a file format used to efficiently store game of life's patterns.
+Each RLE file is composed of two parts: a header and the pattern on itself. The parttern is itself composed of 4 data symbols:
+  - o (live cell)
+  - b (dead cell)
+  - $ (new line)
+  - ! (end of file)
+
+The symbols for the cell (o or b) can be preceded by a run count (e.g., `5o` for five live cells).
+
+The program is parsing RLE file line by line. For each line the parser will look each character sequencially
+In case of a number, the program 
+
 
 3) Terminal UI (menu + controls)
 - Startup menu
