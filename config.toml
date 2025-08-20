@@ -1,0 +1,125 @@
+baseURL = "https://zen-lex.github.io/"
+title = "JABK."
+theme = [ "PaperMod" ]
+languageCode = "en"
+enableRobotsTXT = true
+enableEmoji = true
+defaultContentLanguage = "en"
+pygmentsUseClasses = true
+buildFuture = false
+buildExpired = false
+
+[minify]
+  disableXML = true
+  minifyOutput = true
+
+[pagination]
+  pagerSize = 5
+
+[languages.en]
+  languageCode = 'en-US'
+  languageName = "English :uk:"
+  languageAltName = "English"
+  weight = 1
+
+[[languages.en.menu.main]]
+  identifier = "projects"
+  name = "Projects"
+  url = "/projects/"
+  weight = 1
+
+[[languages.en.menu.main]]
+  identifier = "about"
+  name = "About Me"
+  url = "/about"
+  weight = 2
+
+[params]
+  displayfullLangName = true
+  env = "production"
+  keywords = [ "Blog", "Portfolio", "PaperMod" ]
+  images = [ "<link or path of image for opengraph, twitter-cards>" ]
+  DateFormat = ":date_long"
+  defaultTheme = "auto"
+  disableThemeToggle = false
+
+  [params.assets]
+    disableFingerprinting = true
+    favicon = "images/favicon.png"
+    favicon16x16 = "images/favicon.png"
+    favicon32x32 = "images/favicon.png"
+    apple_touch_icon = "<link / abs url>"
+    safari_pinned_tab = "<link / abs url>"
+
+  [params.label]
+    text = "Home"
+
+  [params.profileMode]
+    enabled = false
+    defaultContentLanguage = "en"
+    title = "Hi there 👋"
+    subtitle = "Welcome to my blog"
+    imageUrl = "images/Lumpy.jpg"
+    imageWidth = 120
+    imageHeight = 120
+    imageTitle = "my image"
+
+  [[params.profileMode.buttons]]
+    name = "Projets"
+    url = "projets"
+
+  [[params.profileMode.buttons]]
+    name = "CV"
+    url = "files/cv.pdf"
+
+  [params.homeInfoParams]
+    Title = "Hi there 👋"
+    Content = "Welcome to my blog"
+
+  [[params.socialIcons]]
+    name = "email"
+    url = "mailto:contact@jabk.dev"
+
+  [[params.socialIcons]]
+    name = "github"
+    url = "https://github.com/Zen-lex"
+
+  [[params.socialIcons]]
+    name = "linkedin"
+    url = "https://linkedin.com/in/jabk"
+
+  [[params.socialIcons]]
+    name = "instagram"
+    url = "https://www.instagram.com/julien.bk0/"
+
+  [[params.socialIcons]]
+    name = "spotify"
+    url = "https://open.spotify.com/user/qghl2te58xxxlj4xrr94gh5g6?si=1426d692e10e4b9f"
+
+  [params.cover]
+    relative = false
+    hidden = true
+    hiddenInList = true
+    hiddenInSingle = false
+
+  [params.editPost]
+    disabled = true
+    URL = "https://github.com/Zen-lex/"
+    Text = "Source Code"
+    appendFilePath = false
+
+  [params.fuseOpts]
+    isCaseSensitive = false
+    shouldSort = true
+    location = 0
+    distance = 1_000
+    threshold = 0.4
+    minMatchCharLength = 0
+    keys = [ "title", "permalink", "summary", "content" ]
+
+[markup]
+  [markup.highlight]
+    noClasses = false
+
+  [markup.goldmark.renderer]
+    unsafe = true

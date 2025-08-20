@@ -2,7 +2,7 @@
 title: "Spotify History"
 summary: "A simple client-side web app to display the last songs listen with your Spotify account"
 date: 2023-03-30T01:47:10+02:00
-draft: true
+draft: false
 
 showToc: true
 TocOpen: false
@@ -42,10 +42,10 @@ cover:
 editPost:
   URL: "https://github.com/Zen-lex/historify"
   Text: "Source Code" # edit text
-  appendFilePath: false # to append file path to Edit link
+  appendFilePath: true # to append file path to Edit link
 ---
 
-#### A simple client-side web app to display the last songs listen with your Spotify account EN
+#### A simple client-side web app to display the last songs listen with your Spotify account
 
 ### Two ways to try it
 
@@ -75,5 +75,7 @@ For the API, Spotify is my main way to listen to music in my everyday life and t
 
 Have Fun <3 😊
 
-<p align="center"><img class="inbuilt-img" alt="Screenshot of the mobile version" src="/assets/img/historify-screenshot_mobile.jpg" width="243" height="540"></p>
-<p class="text-muted caption">Screenshot of the mobile version.</p>
+<div align="center">
+  <img class="inbuilt-img" alt="Screenshot of the mobile version" src="/images/historify-screenshot_mobile.jpg" width="243" height="540">
+  <p class="text-muted caption">Screenshot of the mobile version.</p>
+</div>

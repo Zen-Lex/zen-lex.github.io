@@ -1,7 +1,7 @@
 ---
-title: "{{ replace .Name "-" " " | title }}"
+title: "About"
 author: Me # multiple authors ["Me", "You"] 
-date: {{ .Date }}
+date: 2025-08-20T02:55:15+02:00
 draft: true
 
 showToc: true
@@ -30,6 +30,7 @@ disableHLJS: false
 disableSpecial1stPost: false
 disableScrollToTop: false
 
-missingTranslationUrl: "{{ path.Dir .Path }}"
-
+missingTranslationUrl: "."
 ---
+
+I'm Julien, a 22yo french student currently studying at the Technical University of Munich (TUM) on the He
