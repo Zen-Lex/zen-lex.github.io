@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://zen-lex.github.io/sitemap.xml

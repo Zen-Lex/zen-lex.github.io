@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>JABK.</title>
+    <link>https://zen-lex.github.io/</link>
+    <description>Recent content on JABK.</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-US</language>
+    <lastBuildDate>Wed, 20 Aug 2025 02:55:15 +0200</lastBuildDate>
+    <atom:link href="https://zen-lex.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>About</title>
+      <link>https://zen-lex.github.io/about/</link>
+      <pubDate>Wed, 20 Aug 2025 02:55:15 +0200</pubDate>
+      <guid>https://zen-lex.github.io/about/</guid>
+      <description>I&amp;rsquo;m Julien, a 22yo french student currently studying at the Technical University of Munich (TUM) on the He</description>
+    </item>
+    <item>
+      <title>Spotify History</title>
+      <link>https://zen-lex.github.io/projects/spotify_history/</link>
+      <pubDate>Thu, 30 Mar 2023 01:47:10 +0200</pubDate>
+      <guid>https://zen-lex.github.io/projects/spotify_history/</guid>
+      <description>A simple client-side web app to display the last songs listen with your Spotify account</description>
+    </item>
+  </channel>
+</rss>
