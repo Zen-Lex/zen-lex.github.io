@@ -1,0 +1,7 @@
+.gitignore
+
+# Hugo build artifacts
+public/
+
+# Local development
+.hugo_build.lock
