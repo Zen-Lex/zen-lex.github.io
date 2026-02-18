@@ -13,9 +13,15 @@
     margin-bottom: 5px;
 }
 
-.post-meta,
-.breadcrumbs {
+.post-meta {
     color: var(--secondary);
+    font-size: 14px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.breadcrumbs {
+    color: var(--accent);
     font-size: 14px;
     display: flex;
     flex-wrap: wrap;
@@ -71,9 +77,13 @@
 
 .post-content a,
 .toc a:hover {
-    box-shadow: 0 1px 0;
+    box-shadow: 0 1px 0 var(--accent);
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
+}
+
+.post-content a:hover {
+    color: var(--accent);
 }
 
 .post-content a code {
@@ -203,8 +213,7 @@
     display: block;
     margin: auto 0;
     padding: 10px;
-    color: rgb(213, 213, 214);
-    background: var(--hljs-bg) !important;
+    color: var(--content);
     border-radius: var(--radius);
     overflow-x: auto;
     word-break: break-all;
@@ -240,17 +249,14 @@
     text-align: center;
 }
 
-.post-content figure > figcaption {
-    color: var(--primary);
-    font-size: 16px;
-    font-weight: bold;
-    margin: 8px 0 16px;
-}
-
 .post-content figure > figcaption > p {
     color: var(--secondary);
     font-size: 14px;
     font-weight: normal;
+} */
+
+.post-content video {
+    border-radius: 4px;
 }
 
 .toc {
@@ -268,6 +274,10 @@
 .toc details summary {
     cursor: pointer;
     margin-inline-start: 20px;
+}
+
+.toc details summary::marker {
+    color: var(--accent);
 }
 
 .toc details[open] summary {
@@ -296,6 +306,10 @@
     margin-top: 56px;
 }
 
+.post-tags {
+    margin-top: .5em;
+}
+
 .post-tags li {
     display: inline-block;
     margin-inline-end: 3px;
@@ -322,7 +336,7 @@
 
 .post-tags a:hover,
 .paginav a:hover {
-    background: var(--border);
+    background: var(--accent-secondary);
 }
 
 .share-buttons {
@@ -348,7 +362,7 @@ h4:hover .anchor,
 h5:hover .anchor,
 h6:hover .anchor {
     display: inline-flex;
-    color: var(--secondary);
+    color: var(--accent);
     margin-inline-start: 8px;
     font-weight: 500;
     user-select: none;
@@ -395,4 +409,52 @@ h1>a>svg {
 img.in-text {
     display: inline;
     margin: auto;
+}
+
+.side-by-side {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.side-by-side__text {
+    flex: 2 1 320px;
+    min-width: 260px;
+}
+
+.side-by-side__media {
+    flex: 1 1 200px;
+    max-width: 300px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.side-by-side__media img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-bottom: 0;
+}
+
+figcaption {
+    margin-top: 4px;
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    color: var(--primary);
+    font-style: italic;
+    font-weight: 400;
+}
+
+.dark .post-content .highlight:not(table) {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+@media (max-width: 768px) {
+    .side-by-side {
+        flex-direction: column;
+    }
 }

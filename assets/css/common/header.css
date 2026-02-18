@@ -30,6 +30,10 @@
     font-weight: 700;
 }
 
+.logo a:hover {
+    color: var(--accent);
+}
+
 .logo a img, .logo a svg {
     display: inline;
     vertical-align: middle;
@@ -69,12 +73,12 @@ body:not(.dark) #sun {
 }
 
 #menu span:hover {
-    border-bottom: 2px solid currentColor;
+    border-bottom: 2px solid var(--accent);
 }
 
 #menu .active {
     font-weight: 600;
-    /* border-bottom: 2px solid currentColor; */
+    border-bottom: 2px solid var(--accent);
 }
 
 .lang-switch li,

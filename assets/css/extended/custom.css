@@ -1,0 +1,7 @@
+.social-icons > a {
+	box-shadow: none;
+}
+
+.social-icons > a:hover {
+	color: var(--accent);
+}

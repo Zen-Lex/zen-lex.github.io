@@ -2,6 +2,7 @@
 title: "Spotify History"
 summary: "A simple client-side web app to display the last songs listen with your Spotify account"
 date: 2023-03-30T01:47:10+02:00
+tags: ["JavaScript", "Web Development", "API"]
 draft: false
 
 showToc: true

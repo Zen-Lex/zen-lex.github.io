@@ -1,0 +1,10 @@
+/* Override accent colors with orange */
+:root {
+    --accent: rgb(230, 126, 34);
+    --accent-secondary: rgba(230, 126, 34, 0.15);
+}
+
+.dark {
+    --accent: rgb(243, 156, 18);
+    --accent-secondary: rgba(243, 156, 18, 0.15);
+}

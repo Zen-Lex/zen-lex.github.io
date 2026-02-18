@@ -1,0 +1,4 @@
+/* Widen content area only for single post pages */
+.main:has(.post-single) {
+    max-width: calc(1024px + var(--gap) * 2);
+}

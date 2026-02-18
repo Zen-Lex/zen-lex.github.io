@@ -32,7 +32,7 @@ disableScrollToTop: false
 description: "A C++17+ terminal app to explore Conway's Game of Life, featuring a menu‑driven CLI, RLE pattern support, and a performant simulation core."
 
 cover:
-  image: "images/image1.png"
+  image: "images/gof_gosperglidergun_run.gif"
   alt: "Main menu of the Game of Life CLI showing the currently selected RLE file"
   caption: "Game of Life CLI — minimal TUI with RLE pattern selection"
   hidden: false
@@ -43,44 +43,90 @@ editPost:
   appendFilePath: false
 ---
 
-#### A tiny but capable terminal app to play with Conway's Game of Life in C++
+<!-- #### A tiny but capable terminal app to play with Conway's Game of Life in C++ -->
 
 The project is a zero‑GUI, keyboard‑driven experience focused on speed, portability, and good terminal ergonomics. It loads classic patterns from RLE files, lets you tweak simulation options, and renders crisp ASCII frames in your shell.
 
-### Two ways to try it
+## Conway's Game of Life
 
-1) Run one of the provided demo patterns  
-   - Launch the app and select a file from the bundled `rle/` directory (e.g., `rle/gosperglidergun.rle`).
+Conway's Life is a cellular automaton on a 2D grid with simple birth/survival rules that produce complex behavior. Common phenomena include oscillators (e.g., Pulsar), spaceships (Glider), and guns (Gosper) that emit gliders indefinitely.
 
-2) Load your own pattern  
-   - Pass a valid `.rle` path from the CLI or set it as the "current file" in the menu.
+## Building and running
 
-### Features at a glance
+#### Requirements
+- A C++20+ compiler (GCC, Clang, or MSVC)
+- A standard terminal
 
-- Pure C++17+ implementation, portable across Linux/macOS/Windows terminals
+#### Build
+```bash
+git clone https://github.com/Zen-Lex/game-of-life-cli.git
+cd game-of-life-cli
+g++-13 -std=c++20 project.cpp gameoflife.cpp grid.cpp menu.cpp parser.cpp -fsanitize=address -lncurses -pthread -o build/project
+```
+
+#### Run
+```bash
+./build/project
+```
+
+## Instructions
+- Navigate the menu with arrow keys or j/k; confirm with Enter
+- Choose "Run" to start the simulation using the currently selected RLE
+- While running:
+  - Space: pause/resume
+  - n: advance one generation
+  - r: reset to the initial state
+  - +/-: change speed
+  - w: toggle wrap mode
+  - q: back to menu
+
+## Features
+- Pure modern C++ implementation, portable across Linux/macOS/Windows terminals
 - Menu‑driven CLI with keyboard controls: run/pause, step, reset, speed, wrap, etc.
 - RLE pattern loader supporting headers (`x=`, `y=`, `rule=`) and run‑length encoded bodies
 - Fast simulation core with double‑buffering and optional toroidal wrap
 - Efficient ASCII rendering with minimal flicker and stable frame pacing
 - Ships with a small library of well‑known patterns (Gosper glider gun, Pulsar, Infinite Growth, …)
-- Deterministic stepping for reproducible runs
 
-<div align="center">
-  <img class="inbuilt-img" alt="Main menu with a Gosper Glider Gun selected" src="/images/image1.png" width="1280" height="500">
-  <p class="text-muted caption">Main menu — current file: <code>rle/gosperglidergun.rle</code>.</p>
-</div>
+<!-- ![Yellow Duck](/img/gof_menus.gif  'Yellow Duck') -->
 
-<div align="center">
-  <img class="inbuilt-img" alt="Menu with the Infinite Growth pattern selected" src="/images/image3.png" width="1280" height="500">
-  <p class="text-muted caption">Selecting <code>rle/infinitegrowth.rle</code> before launching the simulation.</p>
-</div>
+### Board Game
+Most of the time in the game of life, the grid representing a game after x iterations will contain more dead than live cells.
+Therefore using a 2D array of bool values is very useful for computing the next state of the game but will result in storing a lot of dead cells, i.e. data without useful information.
 
-<div align="center">
-  <img class="inbuilt-img" alt="Menu with the Pulsar pattern selected" src="/images/image4.png" width="1280" height="500">
-  <p class="text-muted caption">Choosing <code>rle/pulsar.rle</code> for a classic oscillator showcase.</p>
-</div>
+To avoid this, the state of the game is stored in a `vector<cell>`, an array of `Cell`, simple `struct` storing the position `x,y` of the cell. With this approach only live cells and there position are stored.
 
-### How it works
+### Pattern loading (RLE parser)
+The RLE (short for Run Length Encoded) is a file format used to efficiently store game of life's patterns.
+Each RLE file is composed of two parts: a header and the pattern on itself. The parttern is itself composed of 4 data symbols:
+  - o (live cell)
+  - b (dead cell)
+  - $ (new line)
+  - ! (end of file)
+
+The symbols for the cell (o or b) can be preceded by a run count (e.g., `5o` for five live cells).
+
+The program is parsing RLE file line by line. For each line the parser will look each character sequencially
+In case of a number, the program 
+
+### Terminal UI
+3) Terminal UI (menu + controls)
+- Startup menu
+  - "Run (current file: …)"
+  - "Instructions"
+  - "Options"
+  - "About The Game of Life"
+  - "Exit"
+- During simulation
+  - Keyboard shortcuts (example set):
+    - Space: pause/resume
+    - n: single step
+    - r: reset to initial pattern
+    - +/-: adjust ticks per second
+    - w: toggle wrap mode
+    - q: quit to menu
+
+## How it works
 
 The app is split into small, focused modules. Below is an overview of the architecture and the key responsibilities of each part.
 
@@ -105,132 +151,9 @@ The app is split into small, focused modules. Below is an overview of the archit
     - Swap buffers after a full pass.
   - Exposes controls: run/pause, single step, reset, tick rate.
 
-### Board Game
-Most of the time in the game of life, the grid representing a game after x iterations will contain more dead than live cell.
-Therefore using a 2D array of bool values is very useful for computing the next state of the game but will result in storing a lot of dead cells, i.e. data without useful information.
-
-To avoid this, the state of the game is stored in a `vector<cell>` (an array of cell). Cell are simple `struct` storing the position x,y of the cell. With this approach only live cells and there position are stored.
-
-
-### Pattern loading (RLE parser)
-The RLE (short for Run Length Encoded) is a file format used to efficiently store game of life's patterns.
-Each RLE file is composed of two parts: a header and the pattern on itself. The parttern is itself composed of 4 data symbols:
-  - o (live cell)
-  - b (dead cell)
-  - $ (new line)
-  - ! (end of file)
-
-The symbols for the cell (o or b) can be preceded by a run count (e.g., `5o` for five live cells).
-
-The program is parsing RLE file line by line. For each line the parser will look each character sequencially
-In case of a number, the program 
-
-
-3) Terminal UI (menu + controls)
-- Startup menu
-  - "Run (current file: …)"
-  - "Instructions"
-  - "Options"
-  - "About The Game of Life"
-  - "Exit"
-- During simulation
-  - Keyboard shortcuts (example set):
-    - Space: pause/resume
-    - n: single step
-    - r: reset to initial pattern
-    - +/-: adjust ticks per second
-    - w: toggle wrap mode
-    - q: quit to menu
-- Rendering
-  - ANSI/ASCII characters for live cells vs empty space.
-  - Tight redraws to minimize flicker and maximize throughput.
-  - Frame pacing to respect the chosen tick rate.
-
-4) Configuration and options
-- Pattern file path: any `.rle`
-- Tick rate (TPS/FPS): simulation speed
-- Wrap mode: bounded edges vs toroidal
-- Initial placement: top‑left or centered
-- Theme: characters used to render alive/dead cells (e.g., "█" vs " ")
-
-5) File layout (representative)
-```
-.
-├─ rle/                     # Sample patterns
-│  ├─ gosperglidergun.rle
-│  ├─ pulsar.rle
-│  └─ infinitegrowth.rle
-├─ src/
-│  ├─ board.hpp/.cpp        # Grid, buffers, neighbor counting
-│  ├─ rules.hpp/.cpp        # B3/S23 rule application
-│  ├─ rle_parser.hpp/.cpp   # Header + body decoder
-│  ├─ engine.hpp/.cpp       # Game loop, timing, input dispatch
-│  ├─ renderer.hpp/.cpp     # Terminal drawing helpers
-│  └─ cli.hpp/.cpp          # Menu, options, instructions
-├─ include/                 # Public headers (if split)
-├─ CMakeLists.txt
-└─ README.md
-```
-
-6) Performance notes
-- Double‑buffering avoids mid‑frame reads of freshly written states.
-- Dense array layout enables tight inner loops and predictable neighbor scans.
-- Build with optimizations (`-O2/-O3`) for smooth large‑grid runs.
-
-7) Extensibility points
+## Extensibility points
 - Rules: accept generic "B…/S…" rule strings
 - Storage: dense vs sparse grids for huge, sparse universes
 - Rendering: color themes, Unicode tiles, or ncurses
 - Export: dump generations to RLE or snapshots
 - Inputs: random seeding, brush mode, or mouse via advanced TUI
-
-### Instructions
-
-- Navigate the menu with arrow keys or j/k; confirm with Enter
-- Choose "Run" to start the simulation using the currently selected RLE
-- While running:
-  - Space: pause/resume
-  - n: advance one generation
-  - r: reset to the initial state
-  - +/-: change speed
-  - w: toggle wrap mode
-  - q: back to menu
-
-<div align="center">
-  <img class="inbuilt-img" alt="Menu showing the main entries" src="/images/image2.png" width="1280" height="500">
-  <p class="text-muted caption">Minimal keyboard‑driven TUI.</p>
-</div>
-
-### About Conway's Game of Life
-
-Conway's Life is a cellular automaton on a 2D grid with simple birth/survival rules that produce complex behavior. Common phenomena include oscillators (e.g., Pulsar), spaceships (Glider), and guns (Gosper) that emit gliders indefinitely.
-
-### Building and running
-
-Requirements
-- A C++17+ compiler (GCC, Clang, or MSVC)
-- CMake (if the project uses CMake)
-- A standard terminal
-
-Build (typical CMake flow)
-```bash
-git clone https://github.com/Zen-Lex/game-of-life-cli.git
-cd game-of-life-cli
-cmake -S . -B build -DCMAKE_BUILD_TYPE=Release
-cmake --build build --config Release
-./build/game-of-life-cli  # or the platform's output path
-```
-
-Run with a specific pattern
-```bash
-./game-of-life-cli --file rle/gosperglidergun.rle
-```
-
-### Why I built it
-
-- Practice modern, portable C++ in a terminal setting
-- Explore algorithmic performance trade‑offs (dense vs sparse grids, buffer strategies)
-- Implement the RLE format end‑to‑end
-- Create a small, ergonomic tool to "feel" emergent complexity in real time
-
-Have fun <3 😊
