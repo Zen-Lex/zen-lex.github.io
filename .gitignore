@@ -5,3 +5,6 @@ public/
 
 # Local development
 .hugo_build.lock
+
+# ChatGPT Codex
+.codex_tmp
